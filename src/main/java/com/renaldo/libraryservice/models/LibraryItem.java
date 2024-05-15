@@ -12,12 +12,17 @@ public class LibraryItem {
     @Id
     @GeneratedValue
     private Long isbn;
+
+
+
     // private int reading_level;
+    private int year_published;
     public LibraryItem(){}
     public LibraryItem(String title, String author, Long isbn, int reading_level) {
         this.title = title;
         this.author = author;
         this.isbn = isbn;
+        this.year_published = year_published;
         // this.reading_level = reading_level;
     }
 
@@ -52,5 +57,13 @@ public class LibraryItem {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public int getYear_published() {
+        return year_published;
+    }
+
+    public void setYear_published(int year_published) {
+        this.year_published = year_published;
     }
 }

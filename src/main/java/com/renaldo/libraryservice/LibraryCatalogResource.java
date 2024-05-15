@@ -23,7 +23,8 @@ public class LibraryCatalogResource {
         In its completed form, it should use the isbn to go through the database and
         return the actual details based on that
         * */
-        return new LibraryItem("Life of Pi", "renaldo hyacinthe", isbn,4);
+        //return new LibraryItem("Life of Pi", "renaldo hyacinthe", isbn,4);
+        return repository.findByIsbn(isbn);
     }
 
     @RequestMapping("/save/{title}")
