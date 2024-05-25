@@ -19,9 +19,6 @@ target/
 *.iml
 *.ipr
 
-## ignore frontend
-frontend/
-
 ### NetBeans ###
 /nbproject/private/
 /nbbuild/
@@ -34,3 +31,12 @@ build/
 
 ### VS Code ###
 .vscode/
+
+## ADD ALL DS STORE FILES 
+.DS_Store
+src/.DS_Store
+src/main/.DS_Store
+src/main/java/.DS_Store
+src/main/java/com/.DS_Store
+src/main/java/com/renaldo/.DS_Store
+src/main/java/com/renaldo/libraryservice/.DS_Store
