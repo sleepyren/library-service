@@ -10,7 +10,7 @@ public class LibraryItem {
     private String title;
     private String author;
     @Id
-    @GeneratedValue
+    // @GeneratedValue this will generate an autoincrementing ID which I dont want
     private Long isbn;
 
 

@@ -1,11 +1,9 @@
 package com.renaldo.libraryservice;
 
 import com.renaldo.libraryservice.models.LibraryItem;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -28,19 +26,40 @@ public class LibraryCatalogResource {
         return repository.findByIsbn(isbn);
     }
 
-    @RequestMapping("/save/{title}")
-    public String save(@PathVariable String title)
+    @CrossOrigin(origins = "http://localhost:5173")
+    @PostMapping(value="/save", consumes = "application/json")
+    public LibraryItem save(@RequestBody LibraryItem item)
     {
-        repository.save(new LibraryItem(title, "renaldo hyacinthe", (long) 1234,4));
-        return "Saved";
+        return repository.save(item);
     }
 
-    //Enables cross origin requests from the frontend. The server will approve a preflight CORS request
+    //Enables cross-origin requests from the frontend. The server will approve a preflight CORS request
     @CrossOrigin(origins = "http://localhost:5173")
     @RequestMapping("/findall")
     public List<LibraryItem> findAll(){
         return repository.findAll();
     }
+
+    //This annotation basically means that if there is an exception during
+    //the database edit it will be rolled back
+
+    /*NOTE
+    * If an exception is thrown in a transactional method, Spring will automatically roll back the transaction.
+    * If you catch the exception and handle it yourself, the transaction may not be rolled back as expected.
+    * From : https://medium.com/javarevisited/transactional-annotation-in-spring-framework-d571e91bf6bb
+    * */
+    @Transactional
+    @CrossOrigin(origins = "http://localhost:5173")
+    //want to make sure that the Java App is ready to receive a header of this type
+    @PostMapping(value = "/delete", consumes = "text/plain")
+    public long delete(@RequestBody String body)
+    {
+            long isbn = Long.parseLong(body);
+            repository.deleteByIsbn(isbn);
+            return isbn;
+
+    }
+
 
 
 }
