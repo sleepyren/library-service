@@ -22,12 +22,26 @@ npm install
 ```
 
 ### Choose the correct host and port for the backend service
+Set the environment variables in the .env file like so
 ```
 VITE_BACKEND_PORT = '8080'
 VITE_BACKEND_HOST = 'http://localhost:'
 ```
 
-Running the Server
+### Choose the port that the REACT JS and HTML will be served on.
+Set the ports for the development server or the prod build
+```
+  server: {  
+    port: 5173
+}
+,
+  preview: {
+    port: 5173
+  }
+```
+
+
+## Running the Server
 
 To run the application in development mode, use the following command:
 ```
