@@ -1,9 +1,8 @@
 This is the frontend for the Library Service application, built with React and Vite. This project provides a user interface for managing library resources and interacting with the backend service.
 Features
 
-    Browse and search for books
     View detailed information about each book
-    User authentication and profile management
+    CRUD Operations for each element
     Responsive design for desktop and mobile devices
 
 Getting Started

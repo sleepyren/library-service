@@ -60,6 +60,18 @@ public class LibraryCatalogResource {
 
     }
 
+    //This will show all elements that contain the numbers in the sequence
+    //@RequestParam is used to extract query parameters from the URL.
+    //example request: http://host/search?sequence=978059344
+    @CrossOrigin(origins = "http://localhost:5173")
+    @GetMapping("/search")
+    public List<LibraryItem> searchByISBNContaining(@RequestParam String sequence)
+    {
+        return repository.findByISBNContaining(sequence);
+    }
+
+
+
 
 
 }
