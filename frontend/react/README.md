@@ -21,8 +21,13 @@ cd library-service-frontend
 npm install
 ```
 
-Running the Application
-Development Server
+### Choose the correct host and port for the backend service
+```
+VITE_BACKEND_PORT = '8080'
+VITE_BACKEND_HOST = 'http://localhost:'
+```
+
+Running the Server
 
 To run the application in development mode, use the following command:
 ```

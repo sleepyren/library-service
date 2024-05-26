@@ -1,5 +1,5 @@
 import { useEffect, useState} from 'react'
-
+const libraryServiceLink = import.meta.env.VITE_BACKEND_HOST + import.meta.env.VITE_BACKEND_PORT;
 //options will have mode (Edit, Add) and (in edit mode)
 //the original ISBN since it is an ID and it does not change
 //and the classname for add or edit mode forms
@@ -29,7 +29,7 @@ const handleSubmit = async function(formObj)
 
     console.log(formObj);
     //const {title, author, isbn, year_published} = formObj;
-    const response = await fetch("http://localhost:8080/save", {method : 'POST', headers : {"Content-Type" : "application/json"},
+    const response = await fetch(libraryServiceLink + "/save", {method : 'POST', headers : {"Content-Type" : "application/json"},
      body : JSON.stringify(formObj) })
      console.log(response);
      if (response.ok) 

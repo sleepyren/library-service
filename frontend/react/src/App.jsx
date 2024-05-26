@@ -19,6 +19,7 @@ the state.
 
 //const inputList =  await getFromDatabase();
 
+const libraryServiceLink = import.meta.env.VITE_BACKEND_HOST + import.meta.env.VITE_BACKEND_PORT;
 
 function App() {
 
@@ -37,7 +38,7 @@ function App() {
 
 
   const getFromDatabase = async function(){
-  const response = await fetch('http://localhost:8080/findall');
+  const response = await fetch(libraryServiceLink + '/findall');
 
   const res = await response.json();
 
@@ -53,7 +54,7 @@ getFromDatabase();
   } , []);
   const onDelete = async (isbn) => {
     //also remove from the backend database
-    const response = await fetch("http://localhost:8080/delete", {method : 'POST', headers : {"Content-Type" : "text/plain"}, body : isbn.toString() })
+    const response = await fetch(libraryServiceLink + "/delete", {method : 'POST', headers : {"Content-Type" : "text/plain"}, body : isbn.toString() })
 
       setItemList((state) => {
         console.log('state', state);
