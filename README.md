@@ -49,3 +49,15 @@ mvn spring-boot:run
 
 Now that the backend server has been setup proceed to the REACT frontend setup to test interactions:
 https://github.com/sleepyren/library-service/tree/main/frontend/react
+
+DEMO
+
+    [Adding Entry](/demoImages/addsuccess.gif) 
+
+    [Delete Entry](/demoImages/delete.gif)
+
+    [Edit Entry](/demoImages/editsuccess.gif)
+
+    [Add Failed](/demoImages/addfail.gif)
+
+    [Edit Failed](/demoImages/editfailed.gif)

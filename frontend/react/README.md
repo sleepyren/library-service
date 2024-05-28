@@ -80,14 +80,4 @@ Project Structure
     dist/ - Production build output (generated after running npm run build)
     vite.config.js - Vite configuration file
 
-    DEMO
-
-    [Adding Entry](public/addsuccess.gif) 
-
-    [Delete Entry](public/delete.gif)
-
-    [Edit Entry](public/editsuccess.gif)
-
-    [Add Failed](public/addfail.gif)
-
-    [Edit Failed](public/addfail.gif)
+  
