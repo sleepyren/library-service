@@ -52,12 +52,12 @@ https://github.com/sleepyren/library-service/tree/main/frontend/react
 
 DEMO
 
-    ![Adding Entry](/demoImages/addsuccess.gif) 
+![Adding Entry](/demoImages/addsuccess.gif) 
 
-    ![Delete Entry](/demoImages/delete.gif)
+![Delete Entry](/demoImages/delete.gif)
 
-    ![Edit Entry](/demoImages/editsuccess.gif)
+![Edit Entry](/demoImages/editsuccess.gif)
 
-    ![Add Failed](https://github.com/sleepyren/library-service/blob/main/demoImages/addfail.gif)
+![Add Failed](/demoImages/addfail.gif)
 
-    ![Edit Failed](/demoImages/editfailed.gif)
+![Edit Failed](/demoImages/editfailed.gif)
