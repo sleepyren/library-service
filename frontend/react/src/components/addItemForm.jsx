@@ -36,12 +36,12 @@ const handleSubmit = async function(formObj)
         {const readable = await response.json();
         stateModifier(readable)
         console.log(readable);
-        alert('Edit Successful')
+        alert(options.mode + ' Successful')
         toggleForm()
      }
      else
      {
-        alert('Edit Failed')
+        alert(options.mode + ' Failed')
      }
 }
 
@@ -83,8 +83,8 @@ useEffect(()=>{
         <label> Author
         <input type = 'text' name = 'author'></input><br/>
         </label>
-        {options.mode == 'Add' && <label> Written by:
-        <input type = 'text' name = 'author'></input> <br/>
+        {options.mode == 'Add' && <label> ISBN:
+        <input type = 'text' name = 'isbn'></input> <br/>
              </label>
             
         }
